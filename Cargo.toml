@@ -1,0 +1,15 @@
+[package]
+name = "PlayIpcChannel"
+version = "0.1.0"
+authors = ["skye347 <s347419313@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+ipc-channel = {version="0.11.2",features=["async"]}
+actix = "0.7"
+bincode = "1.0.1"
+futures = "0.1"
+tokio = "0.1.14"
+libc = "0.2.12"
+serde="1.0"
+serde_derive="1.0"
