@@ -5,10 +5,10 @@ authors = ["skye347 <s347419313@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-ipc-channel = {version="0.11.2",features=["async"]}
+ipc-channel = { git = "https://github.com/asajeffrey/ipc-channel", branch="futures-0.3", features=["async"]}
 actix = "0.7"
 bincode = "1.0.1"
-futures = "0.1"
+futures-preview = { version = "0.3.0-alpha"}
 tokio = "0.1.14"
 libc = "0.2.12"
 serde="1.0"

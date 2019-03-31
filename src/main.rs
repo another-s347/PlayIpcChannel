@@ -34,11 +34,11 @@ fn main() {
         //
 
         // broken pipe
-        let mut s = rx1.map_err(|_|()).for_each(|m|{
+        let mut s = rx1.to_stream().map_err(|_|()).for_each(|m|{
             println!("tokio receive:{:?}",&m);
-            futures::future::ok(())
+            future::ready(())
         });
-        tokio::run(s);
+        futures::executor::block_on(s);
     })};
     let (_, tx1): (_, IpcSender<String>) = server0.accept().unwrap();
     tx1.send(person.clone()).unwrap();
